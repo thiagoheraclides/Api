@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Br.Com.Nieto&Oliveira.Application/1.0.0": {
+        "dependencies": {
+          "Br.Com.Nieto&Oliveira.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Br.Com.Nieto&Oliveira.Application.dll": {}
+        }
+      },
+      "Br.Com.Nieto&Oliveira.Domain/1.0.0": {
+        "runtime": {
+          "Br.Com.Nieto&Oliveira.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Br.Com.Nieto&Oliveira.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Br.Com.Nieto&Oliveira.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Br.Com.Nieto&amp;Oliveira.Api/Br.Com.Nieto&amp;Oliveira.Api.csproj" />
+  <Project Path="Br.Com.Nieto&amp;Oliveira.Application/Br.Com.Nieto&amp;Oliveira.Application.csproj" />
+  <Project Path="Br.Com.Nieto&amp;Oliveira.Domain/Br.Com.Nieto&amp;Oliveira.Domain.csproj" />
+  <Project Path="Br.Com.Nieto&amp;Oliveira.Infrastructure/Br.Com.Nieto&amp;Oliveira.Infrastructure.csproj" />
+</Solution>

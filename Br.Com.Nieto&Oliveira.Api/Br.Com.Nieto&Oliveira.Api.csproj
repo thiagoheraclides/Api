@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Br.Com.Nieto_Oliveira.Api</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.9" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Br.Com.Nieto&amp;Oliveira.Application\Br.Com.Nieto&amp;Oliveira.Application.csproj" />
+    <ProjectReference Include="..\Br.Com.Nieto&amp;Oliveira.Infrastructure\Br.Com.Nieto&amp;Oliveira.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
