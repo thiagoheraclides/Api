@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "sqlproj: Build Br.Com.Nieto&Oliveira.Database",
+			"type": "process",
+			"command": "dotnet",
+			"args": [
+				"build",
+				"d:/Projetos/Nieto&Oliveira/Api/Br.Com.Nieto&Oliveira.Database/Br.Com.Nieto&Oliveira.Database.sqlproj"
+			],
+			"problemMatcher": "$sqlproj-problem-matcher",
+			"isBackground": true,
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "Builds the Br.Com.Nieto&Oliveira.Database SQL project"
+		}
+	]
+}

@@ -47,14 +47,43 @@ public class RefreshTokenRepository(IConfiguration config) : IRefreshTokenReposi
         await conn.ExecuteAsync(new CommandDefinition(sql, new { Token = token }, cancellationToken: ct));
     }
 
-    public Task RevogarTodosPorUsuarioAsync(long usuarioId, CancellationToken ct = default)
+    public async Task RevogarTodosPorUsuarioAsync(long usuarioId, CancellationToken ct = default)
     {
-        throw new NotImplementedException();
+        using var conn = new SqlConnection(_config.GetConnectionString("Default"));
+
+        if (conn.State == System.Data.ConnectionState.Closed)
+            await conn.OpenAsync(ct);
+
+        const string sql = 
+        """
+            UPDATE  RefreshTokens
+            SET     Revogado = 1    
+            WHERE   UsuarioId = @UsuarioId AND Revogado = 0
+        """;
+
+        await conn.ExecuteAsync(new CommandDefinition(sql, new {UsuarioId = usuarioId}, cancellationToken: ct));
     }
 
-    public Task SalvarAsync(long usuarioId, string token, DateTime expiraEm, CancellationToken ct = default)
+    public async Task SalvarAsync(long usuarioId, string token, DateTime expiraEm, CancellationToken ct = default)
     {
-        throw new NotImplementedException();
+        using var conn = new SqlConnection(_config.GetConnectionString("Default"));
+
+        if (conn.State == System.Data.ConnectionState.Closed)
+            await conn.OpenAsync(ct);
+
+        const string sql = 
+        """
+            INSERT INTO RefreshTokens 
+                        (UsuarioId
+                        ,Token
+                        ,ExpiraEm)
+            VALUES
+                        (@UsuarioId
+                        ,@Token
+                        ,@ExpiraEm)
+        """;
+
+        await conn.ExecuteAsync(new CommandDefinition(sql, new {UsuarioId = usuarioId, Token = token, ExpiraEm = expiraEm }, cancellationToken: ct));
     }
 
     private class RefreshTokenRow
